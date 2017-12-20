@@ -1,5 +1,7 @@
 package com.chetan.sandbox;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -28,6 +30,9 @@ public interface EmployeeMapper {
 	
 	@Delete("DELETE FROM Employee WHERE ID =#{id}")
 	void deleteEmployee(int id);
+	
+	@Select("SELECT ID, FIRSTNAME, LASTNAME FROM EMPLOYEE ")
+	List<Employee> selectAllEmployees();
 	
 	
 }
